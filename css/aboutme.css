@@ -1,0 +1,33 @@
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 0 -20px;
+    border-radius: 50%;
+    border: 7px solid var(--purple);
+}
+
+.content { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image { 
+    width: 100%;
+}
+
+.content { 
+    width: 100%;
+}
+
+.photo-gallery { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.break { 
+    display: block;
+    margin: 10px
+}

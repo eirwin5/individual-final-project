@@ -1,7 +1,7 @@
 :root {
   --red: #c9184a;
   --green: #2a7a5c;
-  --blue: #2274a5;
+  --blue: #004ECC;
   --purple: #4300b8;
   --yellow: #f5b800;
 }
@@ -26,21 +26,21 @@
 }
 
 @font-face {
-  font-family: Cabin;
-  src: url("../fonts/Cabin-Regular.ttf");
+  font-family: Archivo;
+  src: url("../fonts/Archivo-Regular.ttf");
   font-weight: regular;
 }
 
 @font-face {
-  font-family: Cabin;
-  src: url("../fonts/Cabin-Bold.ttf");
+  font-family: Archivo;
+  src: url("../fonts/Archivo-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: OpenSans;
-  src: url("../fonts/OpenSans-Regular.ttf");
-  font-weight: regular;
+  font-family: Archivo;
+  src: url("../fonts/Archivo-SemiBold.ttf");
+  font-weight: 700;
 }
 
 @font-face {
@@ -61,12 +61,6 @@
   font-weight: 900;
 }
 
-@font-face {
-  font-family: WorkSans;
-  src: url("../fonts/WorkSans-Black.ttf");
-  font-weight: 900;
-}
-
 img {
   width: 100%;
 }
@@ -81,7 +75,7 @@ nav {
   z-index: 3;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding: 20px 50px;
   display: flex;
 }
@@ -100,16 +94,34 @@ nav {
 }
 
 .site-title {
-  color: var(--green);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.site-title img { 
+  width: 45px;
+}
+
+.site-title h1 { 
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+nav a:not(.active):hover {
+  color: var(--yellow);
 }
 
 .active { 
-  color: var(--red);
+  color: var(--green);
   text-decoration: underline;
 }
 
 main {
-  padding: 150px 50px 50px 50px;
+  padding: 85px 50px 50px 50px;
   font-family: Roboto;
   font-size: 20px;
 }
@@ -123,7 +135,7 @@ footer {
   background-color: var(--yellow);
 }
 
-footer img {
+.socials img, footer img {
   width: 60px;
   transition: smooth 1ms;
 }
@@ -133,7 +145,7 @@ footer img {
 }
 
 footer a {
-  font-family: OpenSans;
+  font-family: Archivo;
   font-size: 17px;
   /* line-height: 25px; */
   /* margin-top: 10px; */
@@ -197,7 +209,7 @@ h1 {
 }
 
 p { 
-    font-family: OpenSans;
+    font-family: Archivo, "Open Sans";
     font-size: 17px;
     line-height: 25px;
     margin-top: 10px;
@@ -219,4 +231,8 @@ p {
   100% {
     transform: translateY(0);
   }
+}
+
+:focus { 
+  border: 2px solid blue;
 }

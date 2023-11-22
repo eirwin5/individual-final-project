@@ -73,8 +73,8 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
   display: flex;
@@ -240,13 +240,13 @@ p {
 }
 
 @media screen and (min-width: 600px) {
-  .site-title h1 {
+  /* .site-title h1 {
     display: inline;
     font-family: Roboto;
     font-size: 20px;
     font-weight: bold;
     color: var(--blue);
-  }
+  } */
   .title-logo h1 {
     display: contents;
   }

@@ -120,7 +120,7 @@ nav a:not(.active):hover {
 }
 
 main {
-  padding: 120px 50px 50px 50px;
+  padding: 125px 50px 50px 50px;
   font-family: Roboto;
   font-size: 20px;
 }
@@ -259,7 +259,7 @@ p {
   }
 
   main {
-    padding: 85px 50px 50px 50px;
+    padding: 125px 50px 50px 50px;
   }
 
   .nav-links {

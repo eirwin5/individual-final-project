@@ -1,3 +1,12 @@
+main { 
+  position: relative;
+}
+
+.container { 
+  height: 100vh;
+  overflow: hidden;
+}
+
 .main-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));

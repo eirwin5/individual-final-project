@@ -6,17 +6,14 @@ function showfilter() {
 
     if (curr_display === "none" || !curr_display) {
         filter_form.style.display = "contents";
-        if (window.innerWidth > 992) {
-            filter_container.style.width = "20%";
-            grid.style.width = "80%";
-        }
+        filter_container.style.width = (window.innerWidth > 992) ? "20%" : "100%";
+        grid.style.width = (window.innerWidth > 992) ? "80%" : "100%";
+
     }
     else {
         filter_form.style.display = "none";
-        if (window.innerWidth > 992) {
-            filter_container.style.width = "5%";
-            grid.style.width = "100%";
-        }
+        filter_container.style.width = (window.innerWidth > 992) ? "5%" : "100%";
+        grid.style.width = "100%";
     }
 }
 

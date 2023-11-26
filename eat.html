@@ -12,6 +12,7 @@
       src="https://kit.fontawesome.com/dbc2de0a2d.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/eat.js"></script>
   </head>
   <body>
     <a id="skip" tabindex="1" href="#main-content">Skip to main content</a>
@@ -29,203 +30,550 @@
         <a href="index.html"> Stay </a>
       </div>
     </nav>
-    <main id="main-content">
+    <header>
       <h1>Eat</h1>
-      <div class="grid">
-        <div class="card">
-          <img
-            src="images/founders-outside.jpeg"
-            alt="outside of founders restaurant"
-            width="400"
-          />
-          <div class="card-content">
-            <h2>Founder's Brewing Co</h2>
-            <!-- <div class="top-pick">
-              <i class="fa-solid fa-trophy"></i>
-              <p>Ellie's top dining pick!</p>
-            </div> -->
-            <p>
-              Founders is one of the most popular spots in town. Known for their
-              sandwhiches and beer and just outside of downtown.
-            </p>
-            <p><span class="bold">Favorite menu item:</span> Rubin's Rueben</p>
-            <!-- <hr /> -->
-            <!-- <button>
-              <a href="https://foundersbrewing.com/" target="_blank"
-                >Visit Founders</a
-              >
-            </button> -->
-            <div class="ratings">
-              <div class="dollar-rating">
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-            </div>
+      <h2>At Ellie's Favorite Spots</h2>
+      <p>
+        Check out my favorite restaurants around town! Click the menu icon to
+        filter restaurants based on their food category. I've rated each
+        restaurant with star ratings and dollar sign amounts so you can quickly
+        gauge their rank.
+      </p>
+    </header>
+    <main id="main-content">
+      <div class="main-container">
+        <div class="filter-container" id="filter">
+          <button
+            aria-label="show filter"
+            class="filter-button"
+            onclick="showfilter()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div id="filter-form">
+            <p>Filter by</p>
+            <form>
+              <input
+                type="checkbox"
+                id="sandwhich-checkbox"
+                name="sandwhich"
+                value="sandwhich"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="sandwhich-checkbox">Sandwhiches</label>
+              <br />
+              <input
+                type="checkbox"
+                id="breakfast-checkbox"
+                name="breakfast"
+                value="breakfast"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="breakfast-checkbox">Breakfast</label>
+              <br />
+              <input
+                type="checkbox"
+                id="pizza-checkbox"
+                name="pizza"
+                value="pizza"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="pizza-checkbox">Pizza</label>
+              <br />
+              <input
+                type="checkbox"
+                id="tacos-checkbox"
+                name="tacos"
+                value="tacos"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="tacos-checkbox">Tacos</label>
+              <br />
+              <input
+                type="checkbox"
+                id="hotdogs-checkbox"
+                name="hotdogs"
+                value="hotdogs"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="hotdogs-checkbox">Hotdogs</label>
+              <br />
+            </form>
           </div>
         </div>
-        <div class="card">
-          <img
-            src="images/founders-outside.jpeg"
-            alt="outside of founders restaurant"
-            width="400"
-          />
-          <div class="card-content">
-            <h2>Founder's Brewing Co</h2>
-            <p>
-              Founders is one of the most popular spots in town. Known for their
-              sandwhiches and beer and just outside of downtown.
-            </p>
-            <p><span class="bold">Favorite menu item:</span> Rubin's Rueben</p>
-            <div class="ratings">
-              <div class="dollar-rating">
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-            </div>
+        <!-- end of filter -->
+
+        <!-- modals -->
+        <div id="founders-modal" class="modal">
+          <div class="modal-content">
+            <button
+              type="button"
+              aria-label="close modal"
+              onclick="closeModel('founders')"
+              onkeydown="closeModel('founders')"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Founders</h2>
+            <p>Some text in the Modal..</p>
           </div>
         </div>
-        <div class="card">
-          <img
-            src="images/yesterdog-inside.jpeg"
-            alt="outside of founders restaurant"
-            width="400"
-          />
-          <div class="card-content">
-            <h2>Founder's Brewing Co</h2>
-            <!-- <div class="top-pick">
-              <i class="fa-solid fa-trophy"></i>
-              <p>Ellie's top dining pick!</p>
-            </div> -->
-            <p>
-              Founders is one of the most popular spots in town. Known for their
-              sandwhiches and beer and just outside of downtown.
-            </p>
-            <p><span class="bold">Favorite menu item:</span> Rubin's Rueben</p>
-            <!-- <hr /> -->
-            <!-- <button>
-              <a href="https://foundersbrewing.com/" target="_blank"
-                >Visit Founders</a
-              >
-            </button> -->
-            <div class="ratings">
-              <div class="dollar-rating">
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-            </div>
+
+        <div id="mitten-modal" class="modal">
+          <div class="modal-content">
+            <button
+              type="button"
+              aria-label="close modal"
+              onclick="closeModel('mitten')"
+              onkeydown="closeModel('mitten')"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>The Mitten</h2>
+            <p>Some text in the Modal..</p>
           </div>
         </div>
-        <div class="card">
-          <img
-            src="images/tuplo-waffles.jpeg"
-            alt="outside of founders restaurant"
-            width="400"
-          />
-          <div class="card-content">
-            <h2>Founder's Brewing Co</h2>
-            <!-- <div class="top-pick">
-              <i class="fa-solid fa-trophy"></i>
-              <p>Ellie's top dining pick!</p>
-            </div> -->
-            <p>
-              Founders is one of the most popular spots in town. Known for their
-              sandwhiches and beer and just outside of downtown.
-            </p>
-            <p><span class="bold">Favorite menu item:</span> Rubin's Rueben</p>
-            <!-- <hr /> -->
-            <!-- <button>
-              <a href="https://foundersbrewing.com/" target="_blank"
-                >Visit Founders</a
-              >
-            </button> -->
-            <div class="ratings">
-              <div class="dollar-rating">
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-              </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-            </div>
+
+        <div id="manriquez-modal" class="modal">
+          <div class="modal-content">
+            <button
+              type="button"
+              aria-label="close modal"
+              onclick="closeModel('manriquez')"
+              onkeydown="closeModel('manriquez')"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Taqueria Manriquez</h2>
+            <p>Some text in the Modal..</p>
           </div>
         </div>
-        <div class="card">
-          <img
-            src="images/mitten-pizza.jpeg"
-            alt="outside of founders restaurant"
-            width="400"
-          />
-          <div class="card-content">
-            <h2>Founder's Brewing Co</h2>
-            <!-- <div class="top-pick">
-              <i class="fa-solid fa-trophy"></i>
-              <p>Ellie's top dining pick!</p>
-            </div> -->
-            <p>
-              Founders is one of the most popular spots in town. Known for their
-              sandwhiches and beer and just outside of downtown.
-            </p>
-            <p><span class="bold">Favorite menu item:</span> Rubin's Rueben</p>
-            <!-- <hr /> -->
-            <!-- <button>
-              <a href="https://foundersbrewing.com/" target="_blank"
-                >Visit Founders</a
-              >
-            </button> -->
-            <div class="ratings">
-              <div class="dollar-rating">
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign checked"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <i class="fa-solid fa-dollar-sign"></i>
+
+        <div id="lindo-modal" class="modal">
+          <div class="modal-content">
+            <button
+              type="button"
+              aria-label="close modal"
+              alt="close modal"
+              onclick="closeModel('lindo')"
+              onkeydown="closeModel('lindo')"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Lindo Mexico</h2>
+            <p>Some text in the Modal..</p>
+          </div>
+        </div>
+
+        <div id="tupelo-modal" class="modal">
+          <div class="modal-content">
+            <button
+              type="button"
+              aria-label="close modal"
+              onclick="closeModel('tupelo')"
+              onkeydown="closeModel('tupelo')"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Tupelo Honey</h2>
+            <p>Some text in the Modal..</p>
+          </div>
+        </div>
+        <!-- End modals -->
+
+        <div class="grid">
+          <button
+            type="button"
+            aria-label="open founders modal"
+            class="card sandwhich"
+            id="sandwhich"
+            onclick="openModel('founders')"
+            onkeydown="closeModel('founders')"
+          >
+            <img
+              src="images/founders-outside.jpeg"
+              alt="outside of founders restaurant"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Founder's Brewing Co</h2>
+              <p>
+                Founders is one of the most popular spots in town. Known for
+                their sandwhiches and beer and just outside of downtown.
+              </p>
+              <p>
+                <span class="bold">Favorite menu item:</span> Rubin's Rueben
+              </p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
               </div>
-              <div class="star-rating">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star"></i>
+              <div class="tags">
+                <div class="tag">
+                  <p>Sandwhiches</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
               </div>
             </div>
-          </div>
+          </button>
+          <button
+            type="button"
+            aria-label="open mitten modal"
+            class="card pizza"
+            id="pizza"
+            onclick="openModel('mitten')"
+            onkeydown="closeModel('mitten')"
+          >
+            <img
+              src="images/mitten-outside.webp"
+              alt="outside of mitten brewing"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>The Mitten</h2>
+              <p>
+                The Mitten is my favorite place for pizza. It's inside of an old
+                firehouse, so it has a cool aesthetic, and the pizza is very
+                yummy. I come here for my birthday every year.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Pizza flight</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Pizza</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            aria-label="open lindo modal"
+            class="card tacos"
+            id="tacos"
+            onclick="openModel('lindo')"
+            onkeydown="closeModel('lindo')"
+          >
+            <img
+              src="images/lindo-tacos.jpeg"
+              alt="3 plates of tacos"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Lindo Mexico</h2>
+              <p>
+                A sit down restaurant with an amazing All-around Mexican menu.
+                Super good chips and salsa. Great atmosphere.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Steak tacos</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Tacos</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card sandwhich"
+            id="sandwhich"
+            aria-label="open boardwalk subs modal"
+            onclick="openModel('boardwalk')"
+            onkeydown="closeModel('boardwalk')"
+          >
+            <img
+              src="images/boardwalk-subs.jpeg"
+              alt="A tray with subs"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Boardwalk Subs</h2>
+              <p>
+                Amazing quick and simple sub shop. It's my whole family's
+                favorite.
+              </p>
+              <p>
+                <span class="bold">Favorite menu item:</span> Boardwalk Subs
+              </p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Sandwhiches</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card tacos"
+            aria-label="open manriquez modal"
+            id="tacos"
+            onclick="openModel('manriquez')"
+            onkeydown="closeModel('manriquez')"
+          >
+            <img
+              src="images/manriquez.jpeg"
+              alt="tacos on a tray"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Taqueria Manriquez</h2>
+              <p>
+                My favorite place for tacos. Quick, easy, and never disappoints.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Mango salsa</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Tacos</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card breakfast"
+            id="breakfast"
+            aria-label="open tupelo modal"
+            onclick="openModel('tupelo')"
+            onkeydown="closeModel('tupelo')"
+          >
+            <img
+              src="images/tuplo-waffles.jpeg"
+              alt="plate of chicken and waffles"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Tupelo Honey</h2>
+              <p>
+                In a great location, right downtown. Best chicken and waffles
+                I've ever had. Super cute inside.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Mango salsa</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Breakfast</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card breakfast"
+            id="breakfast"
+            aria-label="open belle modal"
+            onclick="openModel('belle')"
+            onkeydown="closeModel('belle')"
+          >
+            <img
+              src="images/morning-belle-inside.jpeg"
+              alt="breakfast place with lemon wall"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Morning Belle</h2>
+              <p>
+                In a great location, right downtown. Really cute inside and
+                yummy breakfast food.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Waffles</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Breakfast</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card breakfast"
+            id="breakfast"
+            aria-label="open peppermill modal"
+            onclick="openModel('peppermill')"
+            onkeydown="closeModel('peppermill')"
+          >
+            <img
+              src="images/peppermill-table.jpeg"
+              alt="breakfast table with peppermill engraved"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Peppermill Cafe</h2>
+              <p>Super cute go-to diner. I always visit when I'm in town.</p>
+              <p>
+                <span class="bold">Favorite menu item:</span> One Jack Combo
+              </p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Breakfast</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="card hotdogs"
+            id="hotdogs"
+            aria-label="open yesterdog modal"
+            onclick="openModel('yesterdog')"
+            onkeydown="closeModel('yesterdog')"
+          >
+            <img
+              src="images/yesterdog-inside.jpeg"
+              alt="breakfast table with peppermill engraved"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Yesterdog</h2>
+              <p>
+                Best hotdogs in town. It's a must-visit. Also open late so good
+                for late-night eating.
+              </p>
+              <p><span class="bold">Favorite menu item:</span> Yesterdog</p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Hotdogs</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </main>

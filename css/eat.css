@@ -24,25 +24,13 @@ header {
   padding: 130px 80px 0px 80px;
 }
 
-/* button {
-  font-size: 18px;
-  font-weight: bold;
-  background-color: var(--blue);
-  color: white;
-  border-radius: 20px;
-  padding: 12px;
-  transition: smooth 1ms;
-} */
-
 button:hover {
   opacity: 1.1;
 }
 
 .main-container { 
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between
+  flex-direction: column;
 }
 
 #filter-form { 
@@ -53,7 +41,7 @@ button:hover {
 
 .filter-container { 
   margin-top: 50px;
-  width: 5%;
+  width: 100%;
 }
 
 .bold {
@@ -64,7 +52,7 @@ button:hover {
   background-color: white;
   color: grey;
   padding: 0;
-  margin-bottom: 40px
+  margin-bottom: 20px; 
 }
 
 .ratings {
@@ -309,5 +297,20 @@ button:hover {
     flex-direction: column;
     width: 33%;
     align-items: flex-start;
+  }
+
+  .main-container { 
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between
+  }
+
+  .filter-container { 
+    margin-top: 50px;
+    width: 5%;
+  }
+
+  .filter-button { 
+    margin-bottom: 40px
   }
 }

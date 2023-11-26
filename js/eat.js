@@ -4,18 +4,20 @@ function showfilter() {
     var curr_display = filter_form.style.display;
     var grid = document.getElementsByClassName("grid")[0];
 
-
     if (curr_display === "none" || !curr_display) {
         filter_form.style.display = "contents";
-        filter_container.style.width = "20%";
-        grid.style.width = "80%";
+        if (window.innerWidth > 992) {
+            filter_container.style.width = "20%";
+            grid.style.width = "80%";
+        }
     }
     else {
         filter_form.style.display = "none";
-        filter_container.style.width = "5%";
-        grid.style.width = "100%";
+        if (window.innerWidth > 992) {
+            filter_container.style.width = "5%";
+            grid.style.width = "100%";
+        }
     }
-
 }
 
 function toggleCard() {

@@ -53,72 +53,70 @@
             <i class="fa-solid fa-bars"></i>
           </button>
           <div id="filter-form">
-            <p>Filter by</p>
-            <form>
+            <p class="filter-by">Filter by</p>
+            <label class="container">
+              Sandwhiches
               <input
                 type="checkbox"
                 id="sandwhich-checkbox"
-                name="sandwhich"
-                value="sandwhich"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="sandwhich-checkbox">Sandwhiches</label>
-              <br />
-              <input
-                type="checkbox"
-                id="beer-checkbox"
-                name="beer"
-                value="beer"
-                onchange="toggleCard(); toggleAll();"
-              />
-              <label for="beer-checkbox">Beer</label>
-              <br />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Breakfast
               <input
                 type="checkbox"
                 id="breakfast-checkbox"
-                name="breakfast"
-                value="breakfast"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="breakfast-checkbox">Breakfast</label>
-              <br />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Pizza
               <input
                 type="checkbox"
                 id="pizza-checkbox"
-                name="pizza"
-                value="pizza"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="pizza-checkbox">Pizza</label>
-              <br />
-              <input
-                type="checkbox"
-                id="mexican-checkbox"
-                name="mexican"
-                value="mexican"
-                onchange="toggleCard(); toggleAll();"
-              />
-              <label for="mexican-checkbox">Mexican</label>
-              <br />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Hotdogs
               <input
                 type="checkbox"
                 id="hotdogs-checkbox"
-                name="hotdogs"
-                value="hotdogs"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="hotdogs-checkbox">Hotdogs</label>
-              <br />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Mexican
+              <input
+                type="checkbox"
+                id="mexican-checkbox"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Mediterranean
               <input
                 type="checkbox"
                 id="mediterranean-checkbox"
-                name="mediterranean"
-                value="mediterranean"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="mediterranean-checkbox">Mediterranean</label>
-              <br />
-            </form>
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
+            <label class="container">
+              Beer
+              <input
+                type="checkbox"
+                id="beer-checkbox"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <span class="checkmark"> <i class="fa-solid fa-check"></i> </span>
+            </label>
           </div>
         </div>
         <!-- end of filter -->

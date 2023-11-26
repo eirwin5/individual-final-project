@@ -2,6 +2,10 @@ input {
   all: revert; 
 }
 
+main { 
+  padding: 0 80px 80px 80px;
+}
+
 h2 {
   font-family: Roboto;
   font-weight: bold;
@@ -21,7 +25,8 @@ hr {
 
 header { 
   line-height: 50px;
-  padding: 130px 80px 0px 80px;
+  margin-top: 80px;
+  padding: 80px 80px 0px 80px;
 }
 
 button:hover {

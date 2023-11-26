@@ -180,6 +180,7 @@ button:hover {
 }
 
 .address { 
+  font-size: 18px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -222,6 +223,8 @@ button:hover {
 }
 
 .pros-and-cons li { 
+  font-family: Archivo;
+  font-size: 18px;
   margin: 5px 0 
 }
 

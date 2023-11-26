@@ -20,11 +20,18 @@ function showfilter() {
 
 function toggleCard() {
     var cards = document.querySelectorAll('.card');
-
     cards.forEach((card) => {
-        const cardId = card.className.split(" ")[1];
-        var checkbox = document.getElementById(`${cardId}-checkbox`);
-        card.style.display = checkbox.checked ? 'block' : 'none';
+        var cardClasses = card.className.split(" ").slice(1);
+        var checked = false;
+
+        cardClasses.forEach((cardClass) => {
+            var checkbox = document.getElementById(`${cardClass}-checkbox`);
+            if (checkbox.checked) {
+                checked = true;
+            }
+        })
+
+        card.style.display = checked ? 'block' : 'none';
     });
 }
 
@@ -48,16 +55,18 @@ function toggleAll() {
 
 function openModel(id) {
     var modal = document.getElementById(`${id}-modal`);
-    // console.log(`${id}-modal`, modal)
     modal.style.display = "block";
+
+    document.body.style.overflow = "hidden";
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            closeModel(id);
         }
     }
 }
 
 function closeModel(id) {
     var modal = document.getElementById(`${id}-modal`);
+    document.body.style.overflow = "scroll";
     modal.style.display = "none";
 }

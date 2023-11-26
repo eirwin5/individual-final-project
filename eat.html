@@ -35,9 +35,11 @@
       <h2>At Ellie's Favorite Spots</h2>
       <p>
         Check out my favorite restaurants around town! Click the menu icon to
-        filter restaurants based on their food category. I've rated each
-        restaurant with star ratings and dollar sign amounts so you can quickly
-        gauge their rank.
+        filter restaurants based on their food category. My dad values places
+        with good beer, so I've added that into the category list as well. I've
+        rated each restaurant with star ratings and dollar sign amounts so you
+        can quickly gauge their rank. Click on a restaurant for more photos,
+        pros and cons, a link to their website and more!
       </p>
     </header>
     <main id="main-content">
@@ -64,6 +66,15 @@
               <br />
               <input
                 type="checkbox"
+                id="beer-checkbox"
+                name="beer"
+                value="beer"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="beer-checkbox">Beer</label>
+              <br />
+              <input
+                type="checkbox"
                 id="breakfast-checkbox"
                 name="breakfast"
                 value="breakfast"
@@ -82,12 +93,12 @@
               <br />
               <input
                 type="checkbox"
-                id="tacos-checkbox"
-                name="tacos"
-                value="tacos"
+                id="mexican-checkbox"
+                name="mexican"
+                value="mexican"
                 onchange="toggleCard(); toggleAll();"
               />
-              <label for="tacos-checkbox">Tacos</label>
+              <label for="mexican-checkbox">Mexican</label>
               <br />
               <input
                 type="checkbox"
@@ -98,6 +109,15 @@
               />
               <label for="hotdogs-checkbox">Hotdogs</label>
               <br />
+              <input
+                type="checkbox"
+                id="mediterranean-checkbox"
+                name="mediterranean"
+                value="mediterranean"
+                onchange="toggleCard(); toggleAll();"
+              />
+              <label for="mediterranean-checkbox">Mediterranean</label>
+              <br />
             </form>
           </div>
         </div>
@@ -106,16 +126,69 @@
         <!-- modals -->
         <div id="founders-modal" class="modal">
           <div class="modal-content">
-            <button
-              type="button"
-              aria-label="close modal"
-              onclick="closeModel('founders')"
-              onkeydown="closeModel('founders')"
-            >
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h2>Founders</h2>
-            <p>Some text in the Modal..</p>
+            <div class="top-row">
+              <button
+                class="close"
+                type="button"
+                aria-label="close modal"
+                onclick="closeModel('founders')"
+                onkeydown="closeModel('founders')"
+              >
+                Close
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="second-row">
+              <div class="address">
+                <h2>Founders</h2>
+                <p>
+                  235 Cesar E. Chavez Ave SW <br />
+                  Grand Rapids, MI 49503
+                </p>
+                <a
+                  class="visit-site"
+                  target="_blank"
+                  href="https://foundersbrewing.com/"
+                >
+                  Visit Website
+                </a>
+              </div>
+              <div class="pros-and-cons">
+                <div class="pros">
+                  <ul>
+                    <li>
+                      <i class="fa-solid fa-check"></i>
+                      Good location
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i>
+                      Good location
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i>
+                      Good location
+                    </li>
+                  </ul>
+                </div>
+                <div class="cons">
+                  <ul>
+                    <li>
+                      <i class="fa-solid fa-xmark"></i>
+                      Bad location
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-xmark"></i>
+                      Bad location
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-row">
+              <img src="images/founders-outside.jpeg" />
+              <img src="images/founders-food.jpeg" />
+              <img src="images/founders-inside.jpeg" />
+            </div>
           </div>
         </div>
 
@@ -185,8 +258,7 @@
           <button
             type="button"
             aria-label="open founders modal"
-            class="card sandwhich"
-            id="sandwhich"
+            class="card sandwhich beer"
             onclick="openModel('founders')"
             onkeydown="closeModel('founders')"
           >
@@ -225,14 +297,17 @@
                   <p>Sandwhiches</p>
                   <i class="fa-solid fa-check"></i>
                 </div>
+                <div class="tag">
+                  <p>Beer</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
               </div>
             </div>
           </button>
           <button
             type="button"
             aria-label="open mitten modal"
-            class="card pizza"
-            id="pizza"
+            class="card pizza beer"
             onclick="openModel('mitten')"
             onkeydown="closeModel('mitten')"
           >
@@ -270,13 +345,64 @@
                   <p>Pizza</p>
                   <i class="fa-solid fa-check"></i>
                 </div>
+                <div class="tag">
+                  <p>Beer</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button
+            type="button"
+            aria-label="open sheshco modal"
+            class="card mediterranean"
+            onclick="openModel('sheshco')"
+            onkeydown="closeModel('sheshco')"
+          >
+            <img
+              src="images/sheshco-plates.jpeg"
+              alt="plates of mediterranean food"
+              width="400"
+            />
+            <div class="card-content">
+              <h2>Sheshco Mediterranean Grill</h2>
+              <p>
+                I have yet to find a meditteranean place as good as Sheshco, not
+                even in Ann Arbor. Picking a favorite menu item is hard because
+                the pita and hummus and garlic dip is good. The kabob is good
+                and the shwarma. It's also a strong takeout option.
+              </p>
+              <p>
+                <span class="bold">Favorite menu item:</span> Beef Shish Kabob
+                plate
+              </p>
+              <div class="ratings">
+                <div class="dollar-rating">
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign checked"></i>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="star-rating">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                </div>
+              </div>
+              <div class="tags">
+                <div class="tag">
+                  <p>Mediterranean</p>
+                  <i class="fa-solid fa-check"></i>
+                </div>
               </div>
             </div>
           </button>
           <button
             aria-label="open lindo modal"
-            class="card tacos"
-            id="tacos"
+            class="card mexican"
             onclick="openModel('lindo')"
             onkeydown="closeModel('lindo')"
           >
@@ -310,7 +436,7 @@
               </div>
               <div class="tags">
                 <div class="tag">
-                  <p>Tacos</p>
+                  <p>Mexican</p>
                   <i class="fa-solid fa-check"></i>
                 </div>
               </div>
@@ -318,7 +444,6 @@
           </button>
           <button
             class="card sandwhich"
-            id="sandwhich"
             aria-label="open boardwalk subs modal"
             onclick="openModel('boardwalk')"
             onkeydown="closeModel('boardwalk')"
@@ -362,9 +487,8 @@
             </div>
           </button>
           <button
-            class="card tacos"
+            class="card mexican"
             aria-label="open manriquez modal"
-            id="tacos"
             onclick="openModel('manriquez')"
             onkeydown="closeModel('manriquez')"
           >
@@ -397,7 +521,7 @@
               </div>
               <div class="tags">
                 <div class="tag">
-                  <p>Tacos</p>
+                  <p>Mexican</p>
                   <i class="fa-solid fa-check"></i>
                 </div>
               </div>
@@ -405,7 +529,6 @@
           </button>
           <button
             class="card breakfast"
-            id="breakfast"
             aria-label="open tupelo modal"
             onclick="openModel('tupelo')"
             onkeydown="closeModel('tupelo')"
@@ -448,7 +571,6 @@
           </button>
           <button
             class="card breakfast"
-            id="breakfast"
             aria-label="open belle modal"
             onclick="openModel('belle')"
             onkeydown="closeModel('belle')"
@@ -491,7 +613,6 @@
           </button>
           <button
             class="card breakfast"
-            id="breakfast"
             aria-label="open peppermill modal"
             onclick="openModel('peppermill')"
             onkeydown="closeModel('peppermill')"
@@ -533,7 +654,6 @@
           </button>
           <button
             class="card hotdogs"
-            id="hotdogs"
             aria-label="open yesterdog modal"
             onclick="openModel('yesterdog')"
             onkeydown="closeModel('yesterdog')"

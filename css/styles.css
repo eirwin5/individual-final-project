@@ -72,6 +72,10 @@ h3 {
   margin-top: 30px;
 }
 
+p { 
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 600px) {
   .main-text h1 {
     font-size: 130px;

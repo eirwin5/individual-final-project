@@ -1,11 +1,10 @@
 function toggleCard() {
-    var cards = document.querySelectorAll('.card');
+    var cards = document.querySelectorAll('.holder');
     cards.forEach((card) => {
         var cardClasses = card.className.split(" ").slice(1);
         var checked = false;
 
         cardClasses.forEach((cardClass) => {
-            console.log(cardClass)
             if (cardClass != "inview2") {
                 var checkbox = document.getElementById(`${cardClass}-checkbox`);
                 if (checkbox.checked) {
@@ -29,7 +28,7 @@ function toggleAll() {
     });
 
     if (numUnchecked === checkboxes.length) {
-        var cards = document.querySelectorAll('.card');
+        var cards = document.querySelectorAll('.holder');
         cards.forEach((card) => {
             card.style.display = 'block';
         });
@@ -37,21 +36,41 @@ function toggleAll() {
 }
 
 function seeMore(id) {
+    if (document.innerWidth < 600) {
+        document.getElementById(`${id}-mobile-seemore`).style.display = "contents";
+    }
+
     document.getElementById(`${id}-seemore`).style.display = "contents";
     console.log(`${id}-see-less`, document.getElementsByClassName(`${id}-see-less`)[0])
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "contents"
     document.getElementsByClassName(`${id}-see-more`)[0].style.display = "none"
+
 }
 
 function seeLess(id) {
+    if (document.innerWidth < 600) {
+        document.getElementById(`${id}-mobile-seemore`).style.display = "none";
+    }
     document.getElementById(`${id}-seemore`).style.display = "none";
     document.getElementsByClassName(`${id}-see-more`)[0].style.display = "contents"
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "none"
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var wHeight = window.innerHeight * 7.5;
-    document.getElementById("megagrid").style.height = `${wHeight}px`;
+    // var wWidth = window.innerWidth;
+    // var wHeight = window.innerHeight;
+    // const megagrid = document.getElementById("megagrid");
+
+
+    // if (wWidth > 600) {
+    //     megagrid.style.height = `${wHeight * 9.8}px`;
+    // }
+    // else if (wWidth > 800) {
+    //     megagrid.style.height = `${wHeight * 7.8}px`;
+    // }
+    // else {
+    //     megagrid.style.height = `${wHeight * 11.5}px`;
+    // }
 
     const items = document.querySelectorAll('.card');
 

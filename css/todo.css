@@ -16,27 +16,17 @@ footer {
 
 header {
   line-height: 50px;
-  margin-top: 80px;
+  margin-top: 65px;
   padding-bottom: 150px;
+  z-index: 2;
+  min-height: 100vh;
+  background-color: white;
 }
 
 header p { 
   font-family: Archivo, "Open Sans";
   font-size: 17px;
   line-height: 25px;
-}
-
-.mega-grid { 
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  position: absolute;
-  width: 100%;
-}
-
-.mega-grid img { 
-  height: 300px;
-  object-fit: cover;
 }
 
 .card.inview2 {
@@ -80,47 +70,11 @@ header h2 {
   font-size: 20px;
 }
 
-/* .lmcu-container, .fmg-container, .planet-container, .jbz-container, .rpc-container, .va-container, .ra-conatiner, .ap-container { 
-  min-height: 100vh;
-
-}
-
-.lmcu-container { 
-  background-image: url("../images/lmcu-3.png");
-}
-
-.fmg-container { 
-  background-image: url("../images/fmg-1.jpeg");
-}
-
-.planet-container { 
-  background-image: url("../images/planetarium.jpeg");
-}
-
-.jbz-container { 
-  background-image: url("../images/jbz-1.webp");
-}
-
-.rpc-container { 
-  background-image: url("../images/rosa-3.jpeg");
-}
-
-.va-container { 
-  background-image: url("../images/va-5.jpeg");
-}
-
-.ra-container { 
-  background-image: url("../images/ra-3.jpeg");
-}
-
-.ap-container { 
-  background-image: url("../images/ap-2.jpeg");
-} */
-
 .card {
   transition: all 0.8s;
   opacity: 0;
   transform: translateY(20px);
+  z-index: 1;
 }
 
 .guts-bg { 
@@ -148,9 +102,25 @@ header h2 {
   margin: 0 20px 0 0; 
 }
 
+.bg-grid { 
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  z-index: -1;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+
+.bg-grid img { 
+  height: 300px;
+  object-fit: cover;
+}
+
 section { 
   min-height: 100vh;
-  background-color: teal;
+  z-index: 2;
 }
 
 section:nth-child(2n) .main-img { 
@@ -246,9 +216,27 @@ section:nth-child(2n) .main-img {
 }
 
 .weather-filter { 
+  margin-top: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+.weather-filter h2 { 
+  line-height: 20px;
+}
+
+.weather-iframe { 
+  margin: auto;
+}
+
+.weather, .filter { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
 .btn-tag { 
@@ -270,7 +258,7 @@ section:nth-child(2n) .main-img {
 
 .checkboxes { 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 }
 
 .check-container {
@@ -327,6 +315,25 @@ section:nth-child(2n) .main-img {
   left: -1px;
 }
 
+@media screen and (min-width: 684px) {
+  .weather-filter { 
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
+  }
+  
+  .weather, .filter { 
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+  }
+
+  .weather-iframe { 
+    margin: unset;
+  }
+}
+
 @media screen and (min-width: 600px) { 
   .address { 
     display: flex;
@@ -349,7 +356,7 @@ section:nth-child(2n) .main-img {
     border: 5px solid var(--yellow)
   }
 
-  .mega-grid { 
+  .bg-grid { 
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
 

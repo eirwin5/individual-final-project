@@ -42,7 +42,7 @@ function seeMore(id) {
 
     document.getElementById(`${id}-seemore`).style.display = "contents";
     console.log(`${id}-see-less`, document.getElementsByClassName(`${id}-see-less`)[0])
-
+    document.getElementById(`${id}-bg-grid`).style.height = "150vh";
     //buttons
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "inline"
     document.getElementsByClassName(`${id}-see-more`)[0].style.display = "none"

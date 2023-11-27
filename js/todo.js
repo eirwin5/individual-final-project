@@ -42,7 +42,9 @@ function seeMore(id) {
 
     document.getElementById(`${id}-seemore`).style.display = "contents";
     console.log(`${id}-see-less`, document.getElementsByClassName(`${id}-see-less`)[0])
-    document.getElementsByClassName(`${id}-see-less`)[0].style.display = "contents"
+
+    //buttons
+    document.getElementsByClassName(`${id}-see-less`)[0].style.display = "inline"
     document.getElementsByClassName(`${id}-see-more`)[0].style.display = "none"
 
 }
@@ -52,7 +54,9 @@ function seeLess(id) {
         document.getElementById(`${id}-mobile-seemore`).style.display = "none";
     }
     document.getElementById(`${id}-seemore`).style.display = "none";
-    document.getElementsByClassName(`${id}-see-more`)[0].style.display = "contents"
+
+    //buttons
+    document.getElementsByClassName(`${id}-see-more`)[0].style.display = "inline"
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "none"
 }
 

@@ -13,6 +13,9 @@ function seeLess(id) {
 
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
+    var wHeight = window.innerHeight * 7.5;
+    document.getElementById("megagrid").style.height = `${wHeight}px`;
+
     const items = document.querySelectorAll('.appear2');
 
     const active = function (entries) {
@@ -29,3 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener("load", function () {
+    var wHeight = window.innerHeight;
+    console.log(wHeight)
+    document.getElementById("megagrid").style.height = wHeight;
+})

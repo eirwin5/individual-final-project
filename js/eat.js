@@ -12,7 +12,7 @@ function showfilter() {
     }
     else {
         filter_form.style.display = "none";
-        filter_container.style.width = (window.innerWidth > 992) ? "5%" : "100%";
+        filter_container.style.width = (window.innerWidth > 992) ? "0%" : "100%";
         grid.style.width = "100%";
     }
 }

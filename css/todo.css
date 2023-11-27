@@ -232,6 +232,10 @@ section:nth-child(2n) .main-img {
   margin: auto;
 }
 
+.desktop-filler { 
+  display: none;
+}
+
 .weather, .filter { 
   display: flex;
   flex-direction: column;
@@ -343,6 +347,14 @@ section:nth-child(2n) .main-img {
 
   .mobile-hidden { 
     display: contents;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .desktop-filler { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 

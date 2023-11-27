@@ -85,6 +85,7 @@ button:hover {
 }
 
 .card {
+  transition: opacity 1s ease-out  ;
   height: min-content;
   cursor: pointer;
   padding: 20px;

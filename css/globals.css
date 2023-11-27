@@ -121,9 +121,14 @@ nav a:not(.active):hover {
 }
 
 main {
-  padding: 125px 50px 50px 50px;
+  padding: 50px;
   font-family: Roboto;
   font-size: 20px;
+}
+
+header { 
+  padding: 50px;
+  margin-top: 80px;
 }
 
 .index {
@@ -248,26 +253,16 @@ button:hover {
 }
 
 @media screen and (min-width: 600px) {
-  /* .site-title h1 {
-    display: inline;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--blue);
-  } */
   .title-logo h1 {
     display: contents;
   }
+
   .title-logo {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 10px;
     width: 100%;
-  }
-
-  main {
-    padding: 125px 50px 50px 50px;
   }
 
   .nav-links {
@@ -326,8 +321,12 @@ button:hover {
     display: none;
   }
 
+  header {
+    padding: 80px 80px 0 80px;
+  }
+
   main {
-    padding: 85px 80px 80px 80px;
+    padding: 80px;
   }
   .about {
     display: none;

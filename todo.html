@@ -43,17 +43,124 @@
           the perfect day out deserves the perfect weather forecast.
         </p>
       </div>
-      <!-- <div class="weather">
-        <iframe
-          src="https://api.wo-cloud.com/content/widget/?geoObjectKey=17490575&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
-          name="CW2"
-          scrolling="no"
-          width="290"
-          height="318"
-          frameborder="0"
-          style="border: 1px solid #10658e; border-radius: 8px"
-        ></iframe>
-      </div> -->
+      <div class="weather-filter">
+        <div class="weather">
+          <iframe
+            src="https://api.wo-cloud.com/content/widget/?geoObjectKey=17490575&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+            name="CW2"
+            scrolling="no"
+            width="290"
+            height="318"
+            frameborder="0"
+            style="border: 1px solid #10658e; border-radius: 8px"
+          ></iframe>
+        </div>
+        <div class="checkboxes">
+          <label class="check-container">
+            Winter
+            <input
+              type="checkbox"
+              id="winter-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            Summer
+            <input
+              type="checkbox"
+              id="summer-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            Fall
+            <input
+              type="checkbox"
+              id="fall-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            Spring
+            <input
+              type="checkbox"
+              id="spring-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            Outdoors
+            <input
+              type="checkbox"
+              id="outdoors-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            Indoors
+            <input
+              type="checkbox"
+              id="indoors-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+          <label class="check-container">
+            year-round
+            <input
+              type="checkbox"
+              id="year-round-checkbox"
+              onchange="toggleCard(); toggleAll();"
+            />
+            <span class="checkmark">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </label>
+        </div>
+        <!-- <div class="w-tags">
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Summer
+          </button>
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Winter
+          </button>
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Fall
+          </button>
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Spring
+          </button>
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Outdoors
+          </button>
+          <button class="btn-tag">
+            <i class="fa-solid fa-tag"></i>
+            Indoors
+          </button>
+        </div> -->
+      </div>
     </header>
     <main id="main-content">
       <div class="mega-grid" id="megagrid">
@@ -130,7 +237,7 @@
         <img src="images/jbz-2.jpeg" alt="" width="400" />
       </div>
       <div class="container">
-        <section class="appear2">
+        <section class="card summer outdoors">
           <img class="main-img" src="images/lmcu-ballpark.jpeg" />
           <div class="description">
             <h2>Catch a Whitecaps Game at LMCU Ballpark</h2>
@@ -214,7 +321,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card spring summer outdoors">
           <img class="main-img" src="images/butterfly.jpeg" />
           <div class="description">
             <h2>Visit Frederik Meijer Gardens to See the Butterflies</h2>
@@ -300,7 +407,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card year-round summer fall winter spring indoors">
           <img class="main-img" src="images/p-3.jpeg" />
           <div class="description">
             <h2>Visit the Grand Rapids Public Museum Planetarium</h2>
@@ -381,7 +488,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card summer fall spring outdoors">
           <img class="main-img" src="images/zoo.jpeg" />
           <div class="description">
             <h2>Visit John Ball Zoo</h2>
@@ -468,7 +575,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card year-round summer fall winter spring outdoors">
           <img class="main-img" src="images/rosa-4.jpeg" />
           <div class="description">
             <h2>Go Ice Skating at Rosa Parks Circle</h2>
@@ -554,7 +661,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card year-round summer fall winter spring indoors">
           <img class="main-img" src="images/vanandel.jpeg" />
           <div class="description">
             <h2>Watch a concert at Van Andel Arena</h2>
@@ -640,7 +747,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card fall outdoors">
           <img class="main-img" src="images/robinettes.jpeg" />
           <div class="description">
             <h2>Visit Robinette's Apple Orchard</h2>
@@ -724,7 +831,7 @@
             </div>
           </div>
         </section>
-        <section class="appear2">
+        <section class="card summer outdoors indoors">
           <img class="main-img" src="images/blue-bridge.jpeg" />
           <div class="description">
             <h2>Visit Robinette's Apple Orchard</h2>

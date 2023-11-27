@@ -15,7 +15,7 @@
     <script src="js/todo.js"></script>
   </head>
   <body>
-    <a id="skip" tabindex="1" href="#main-content">Skip to main content</a>
+    <a id="skip" href="#main-content">Skip to main content</a>
     <nav>
       <div class="site-title">
         <img src="logos/calder-red.png" width="400" alt="red calder" />
@@ -45,7 +45,8 @@
       </div>
       <div class="weather-filter">
         <div class="weather">
-          <iframe
+          <h2>Check the weather</h2>
+          <!-- <iframe
             src="https://api.wo-cloud.com/content/widget/?geoObjectKey=17490575&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
             name="CW2"
             scrolling="no"
@@ -53,9 +54,9 @@
             height="318"
             frameborder="0"
             style="border: 1px solid #10658e; border-radius: 8px"
-          ></iframe>
+          ></iframe> -->
         </div>
-        <div class="checkboxes">
+        <!-- <div class="checkboxes">
           <label class="check-container">
             Winter
             <input
@@ -133,7 +134,7 @@
               <i class="fa-solid fa-check"></i>
             </span>
           </label>
-        </div>
+        </div> -->
         <!-- <div class="w-tags">
           <button class="btn-tag">
             <i class="fa-solid fa-tag"></i>
@@ -272,7 +273,7 @@
               LMCU Ballpark provides an intimate and lively setting for an
               unforgettable baseball experience.
             </p>
-            <p>
+            <p class="mobile-hidden" id="lmcu-mobile-seemore">
               As you settle into your seat, surrounded by the cheers of fellow
               fans, get ready for a fantastic game. The Whitecaps always deliver
               thrilling performances that keep the crowd on the edge of their
@@ -361,7 +362,7 @@
               the moment with your camera or simply bask in the wonder of this
               natural spectacle.
             </p>
-            <p>
+            <p class="mobile-hidden" id="fmg-mobile-seemore">
               Your journey begins as you marvel at the intricate chrysalises
               suspended from branches, each one holding the secret of a
               butterfly about to unfold. Patiently await the magical moment when
@@ -442,7 +443,7 @@
               you to explore the mysteries of the universe in a way that feels
               both intimate and expansive.
             </p>
-            <p>
+            <p class="mobile-hidden" id="planet-mobile-seemore">
               The planetarium serves as a portal to the cosmos, offering
               educational and entertaining shows that cater to audiences of all
               ages. Whether you're an astronomy enthusiast or a curious novice,
@@ -528,7 +529,7 @@
               towering trees of the rainforest to the arid deserts, each section
               of the zoo offers a unique and immersive experience.
             </p>
-            <p>
+            <p class="mobile-hidden" id="jbz-mobile-seemore">
               Wander through the various exhibits, where you'll encounter a
               menagerie of creatures—from majestic big cats prowling in
               simulated wilderness to playful primates swinging through the
@@ -611,7 +612,7 @@
               surrounded by the city's skyline, is a magical experience that
               captures the essence of winter in Grand Rapids.
             </p>
-            <p>
+            <p class="mobile-hidden" id="rpc-mobile-seemore">
               As the weather warms up, Rosa Parks Circle shifts into concert
               mode. The stage comes alive with the sounds of local bands,
               diverse musical genres, and the buzz of a lively crowd. From indie
@@ -699,7 +700,7 @@
               just there for the excitement, catching a basketball game at Van
               Andel Arena is a slam dunk.
             </p>
-            <p>
+            <p class="mobile-hidden" id="va-mobile-seemore">
               Transforming from a basketball court to a hockey rink, the arena
               becomes a battleground for fierce puck battles and exhilarating
               goals. The atmosphere is intense, the fans are passionate, and the
@@ -781,7 +782,7 @@
               destination; it's a wholesome, family-friendly experience that
               captures the essence of autumn.
             </p>
-            <p>
+            <p class="mobile-hidden" id="rb-mobile-seemore">
               From the moment you set foot on the grounds, you're greeted by the
               sight of sprawling apple orchards, each tree laden with the rich
               hues of ripe fruit. The orchard offers a variety of apple-picking
@@ -869,7 +870,7 @@
               unexpected nooks, creating a dynamic and ever-changing
               masterpiece.
             </p>
-            <p>
+            <p class="mobile-hidden" id="ap-mobile-seemore">
               One of the most exciting aspects of ArtPrize is the incredible
               diversity of artistic expressions. From avant-garde sculptures to
               thought-provoking paintings and cutting-edge multimedia

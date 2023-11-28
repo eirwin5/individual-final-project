@@ -42,7 +42,7 @@ function seeMore(id) {
 
     document.getElementById(`${id}-seemore`).style.display = "contents";
     console.log(`${id}-see-less`, document.getElementsByClassName(`${id}-see-less`)[0])
-    document.getElementById(`${id}-bg-grid`).style.height = "150vh";
+
     //buttons
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "inline"
     document.getElementsByClassName(`${id}-see-more`)[0].style.display = "none"
@@ -56,26 +56,11 @@ function seeLess(id) {
     document.getElementById(`${id}-seemore`).style.display = "none";
 
     //buttons
-    document.getElementsByClassName(`${id}-see-more`)[0].style.display = "inline"
     document.getElementsByClassName(`${id}-see-less`)[0].style.display = "none"
+    document.getElementsByClassName(`${id}-see-more`)[0].style.display = "inline"
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // var wWidth = window.innerWidth;
-    // var wHeight = window.innerHeight;
-    // const megagrid = document.getElementById("megagrid");
-
-
-    // if (wWidth > 600) {
-    //     megagrid.style.height = `${wHeight * 9.8}px`;
-    // }
-    // else if (wWidth > 800) {
-    //     megagrid.style.height = `${wHeight * 7.8}px`;
-    // }
-    // else {
-    //     megagrid.style.height = `${wHeight * 11.5}px`;
-    // }
-
     const items = document.querySelectorAll('.card');
 
     const active = function (entries) {

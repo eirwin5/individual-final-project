@@ -99,7 +99,22 @@ p {
   }
 }
 
+.reduced-motion { 
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+
+  .wt,
+  .vgr {
+    display: none;
+  }
+
+  .reduced-motion { 
+    display: inline;
+    width: 400px;
+  }
+
   #index-nav {
     top: 0;
   }
@@ -116,7 +131,7 @@ p {
   .main-grid-container img:nth-child(11) {
     animation: none;
   }
-
+/* 
   .title-calder {
     display: block;
     width: 200px;
@@ -165,9 +180,9 @@ p {
 
   .r {
     color: var(--red);
-  }
+  } */
 
-  @media screen and (min-width: 600px) {
+  /* @media screen and (min-width: 600px) {
     .vgr {
       font-size: 65px;
     }
@@ -180,5 +195,5 @@ p {
   #main-content {
     position: relative;
     top: 255px;
-  }
+  } */
 }

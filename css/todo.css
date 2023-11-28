@@ -54,13 +54,6 @@ header p {
   transition-delay: 0.5s;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .card { 
-    opacity: 1;
-    transform: none
-  }  
-}
-
 h2 {
   font-family: Roboto;
   font-weight: bold;
@@ -396,4 +389,12 @@ section:nth-child(2n) .main-img {
   .mobile-hidden { 
     display: contents;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { 
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }  
 }

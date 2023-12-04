@@ -114,6 +114,8 @@ header h2 {
 section { 
   min-height: 100vh;
   z-index: 2;
+  display: flex;
+  justify-content: center;
 }
 
 section:nth-child(2n) .main-img { 
@@ -388,6 +390,10 @@ section:nth-child(2n) .main-img {
 
   .mobile-hidden { 
     display: contents;
+  }
+
+  .card { 
+    max-width: 1330px;
   }
 }
 
